@@ -1,4 +1,5 @@
-
+loop4();
+function loop4(){
 try{
     var request = new XMLHttpRequest();
     const d = new Date();
@@ -12,27 +13,31 @@ try{
     request.onreadystatechange = e => {
         // the rest of your code
     };
-    
-    if (request.status === 200) {
-        console.log('success', request.responseText);
-        let GtData = request.responseText;
-        GtData = GtData.split(",,");
-        Quote = GtData[0];
-        author = GtData[1];
-        flag = false;
-        
-        var elem = document.getElementById("quote");
-        elem.innerHTML  = Quote;
-        
-        var elem2 = document.getElementById("author");
-        elem2.innerHTML  = author;
-        
-        
-        
-    } else {
-        console.warn('error');
+    loop3();
+    function loop3(){
+        if (request.status === 200) {
+            console.log('success', request.responseText);
+            let GtData = request.responseText;
+            GtData = GtData.split(",,");
+            Quote = GtData[0];
+            author = GtData[1];
+            author = ("- "+author);
+            flag = false;
+            
+            var elem = document.getElementById("quote");
+            elem.innerHTML  = Quote;
+            
+            var elem2 = document.getElementById("author");
+            elem2.innerHTML  = author;
+            
+            
+            
+        } else {
+            setTimeout(loop3, 250)
+        }
     }
-}
-catch{
+    }catch{
     console.warn("ERROR :(");
 }
+}
+setTimeout(loop4, 25000)

@@ -22,6 +22,7 @@ html,table {
   color: var(--font-color);
   /* display: flex;
   flex-direction: column; */
+  margin-top: 0;
 }
 
 .black {
@@ -47,6 +48,8 @@ border-radius: 4px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-variant: normal;
   font-size: 35px;
+  margin: 10%;
+  margin-top: 0;
 }
 
 .Author{
@@ -54,5 +57,6 @@ border-radius: 4px;
   font-weight: lighter;
   color: grey;
   text-align: end;
-  margin-right: 5%;
+  margin-top: 2%;
+  margin-right: 7%;
 }
