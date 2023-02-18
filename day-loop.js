@@ -6,16 +6,24 @@ function dayV(value){
     var elem2 = document.getElementById("dayVal");
     elem2.innerHTML  = value;
 }
+function Timev(value){
+    var elem2 = document.getElementById("Time");
+    elem2.innerHTML  = value;
+}
 // while(true){
     window.addEventListener("load", function() {
         loop()
       });
     
     function loop(){
+        let time = "";
         let d = new Date();
         let min = d.getMinutes();
         let hrs = d.getHours();
         let sec = d.getSeconds();
+        time = hrs;
+        time = (hrs+" : "+min);
+        Timev(time);
         sec = sec / 60;
         min = min + sec;
         min = min / 60;
@@ -26,7 +34,6 @@ function dayV(value){
         percentage = Math.round(percentage);
         percentage = percentage / 100;
         dayV(percentage);
-        1
         setTimeout(loop, 1000)
     }
 // }
