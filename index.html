@@ -3,54 +3,89 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>🚀 Personal Dashboard</title>
+    <title>💡📑</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Catamaran'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"> -->
+    <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
     <link rel="stylesheet" href="./index.css">
 
 </head>
 
 <body>
+    <!-- <script>document.getElementById("dayPers").style.width = "9%";</script> -->
     <header>
-        <div id="about">
-            <div class="mySocial">
-                <div class="mySocialInfo">
-                    <span>Created by Marius Bongarts <br>Founder of the <a href="https://web-highlights.com"
-                            target="_blank">Web Highlights Chrome
-                            Extension</a></span>
-                </div>
-                <a href="https://www.linkedin.com/in/marius-bongarts-6b3638171/" target="_new" class="social">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/MariusBongarts" target="_new" class="social">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://twitter.com/MariusBongarts" target="_new" class="social">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://medium.com/@mariusbongarts" target="_new" class="social">
-                    <i class="fab fa-brands fa-medium"></i>
-                </a>
-            </div>
-        </div>
+        
     </header>
-    <main>
-        <section class="clock-section">
-            <my-clock></my-clock>
-        </section>
-        <section>
-            <h1>Habit Tracker 💪</h1>
-            <five-habit-tracker></five-habit-tracker>
-        </section>
+        
+            
+                    <label>Day in progress: </label><label id="dayVal">--.-</label><label>%</label><br/>
+                    <div class="black">
+                        <div id="dayPers" class="white" style="height:24px;width:0%"></div>
+                    </div>
+                    <script>
+                    function day(value){
+                        var elem = document.getElementById("dayPers");
+                        elem.style.width = value + '%';
+                    }
+                    function dayV(value){
+                        var elem = document.getElementById("dayVal");
+                        elem.innerHTML  = value;
+                    }
+                    // while(true){
+                        loop()
+                        function loop(){
+                            let d = new Date();
+                            let min = d.getMinutes();
+                            let hrs = d.getHours();
+                            let sec = d.getSeconds();
+                            sec = sec / 60;
+                            min = min + sec;
+                            min = min / 60;
+                            hrs = hrs + min;
+                            let percentage = hrs * 4.166667
+                            day(percentage)
+                            percentage = percentage * 100;
+                            percentage = Math.round(percentage);
+                            percentage = percentage / 100;
+                            dayV(percentage);
+                            1
+                            setTimeout(loop, 1000)
+                        }
+                    // }
+                    </script>
+                    <br/><br/>
+                    <label>Laptop battery: </label><label id="battVal">--.-</label><label>%</label><br/>
+                    <div class="black">
+                        <div id="battPers" class="white" style="height:24px;width:0%"></div>
+                    </div>
+                    <script>
+                        function batt(value){
+                            var elem = document.getElementById("battPers");
+                            elem.style.width = value + '%';
+                        }
+                        function battV(value){
+                            var elem = document.getElementById("battVal");
+                            elem.innerHTML  = value;
+                        }
+                        loop2();
+                        function loop2(){
+                            navigator.getBattery().then(function(battery) {
+                            var level = battery.level;
+                            level = level * 100;
+                            level = Math.round(level);
+                            batt(level);battV(level);});
+                            setTimeout(loop2, 6000)
+                        }
+                 </script>
+
+
+
+
+
     </main>
     <footer>
-
+        
     </footer>
 </body>
-<script src="./src/five-habit-tracker/main.js"></script>
-<script src="./src/clock/main.js"></script>
-
 </html>
