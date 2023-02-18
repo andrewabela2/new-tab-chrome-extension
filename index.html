@@ -9,16 +9,18 @@
     <link rel="stylesheet" href="./index.css">
     <script src="batt-loop.js" nonce="..."></script>
     <script src="day-loop.js" nonce="..."></script>
+    <script src="worker.js" nonce="..."></script>
   </head>
   
 
 <body>
-    <!-- <script>document.getElementById("dayPers").style.width = "9%";</script> -->
     <header>
         
     </header>
-        
-            
+    <main>    
+        <table style="width:100%">
+            <tr>
+                <td style="width:20%">
                     <label>Day in progress: </label><label id="dayVal">--.-</label><label>%</label><br/>
                     <div class="black">
                         <div id="dayPers" class="white" style="height:24px;width:0%"></div>
@@ -28,10 +30,19 @@
                     <div class="black">
                         <div id="battPers" class="white" style="height:24px;width:0%"></div>
                     </div>
-
-
-
-
+                </td>
+                <td>
+                    <div class="Quote">
+                        <label id="quote">Quote</label>
+                        <div class="Author">
+                            <label id="author">Author</label>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+        
 
     </main>
     <footer>
