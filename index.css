@@ -8,7 +8,7 @@ html {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-variant: normal;
   font-size: 20px;
-  background: rgb(45, 45, 45);
+  background: #000;
   /* min-height: 100vh;
   min-width: 100vw;
   height: 100%;
@@ -26,7 +26,7 @@ html {
 .black {
     border-style: solid;
     border-color: #ffffff;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 6px;
     margin-top: 10px;
     color:#fff!important;
@@ -37,6 +37,5 @@ html {
   color:#000!important;
 background-color:#fff!important;
 border-radius: 4px;
-margin: 1px;
-margin-left: 3px;
+/* margin: 1px; */
 }
