@@ -1,4 +1,8 @@
+// chrome.omnibox.onInputStarted.addListener(
+//     callback: function,
+//   )
 loop4();
+
 function loop4(){
 try{
     var request = new XMLHttpRequest();
