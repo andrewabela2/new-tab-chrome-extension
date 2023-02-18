@@ -6,7 +6,7 @@ try{
     let D = d.getDate(); 
     console.log(D);
     let URL = ('https://quotes-8bm1.onrender.com/'+D);
-    URL = 'https://cors-anywhere.herokuapp.com/' + URL; // use the cors-anywhere service
+    //URL = 'https://cors-anywhere.herokuapp.com/' + URL; // use the cors-anywhere service
     var request = new XMLHttpRequest();
     request.open('GET', URL);
     request.send();
